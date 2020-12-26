@@ -1,5 +1,3 @@
-from tqdm import tqdm
-
 with open("input.txt") as f:
     cups_numbering = [int(x)-1 for x in f.read().strip()]  # change to 0-indexed
     cups = [0]*1000000  # represents a linked list, where cups[cup] = next_cup
@@ -49,7 +47,7 @@ def play_round(curr_cup: int) -> int:
     return cups[curr_cup]
 
 
-for _ in tqdm(range(10000000)):
+for _ in range(10000000):
     curr = play_round(curr)
 
 cup1 = cups[0]
